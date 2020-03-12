@@ -1,0 +1,21 @@
+$EXTENSION(cs)
+
+// auto generated file
+
+using System;
+using System.Collections.Generic;
+
+namespace TableData
+{
+	public readonly struct $SHEET_NAME
+	{
+		$PROPERTY_LOOP[public readonly $PROPERTY_TYPE $PROPERTY_NAME;]
+
+		public $SHEET_NAME(JObject json)
+		{
+			$PROPERTY_SET_LOOP(string)[$PROPERTY_NAME = json["$PROPERTY_NAME"].ToString();]
+			$PROPERTY_SET_LOOP(int)[$PROPERTY_NAME = int.Parse(json["$PROPERTY_NAME"].ToString());]
+			$PROPERTY_SET_LOOP[$PROPERTY_NAME = ($PROPERTY_TYPE)json["$PROPERTY_NAME"];]
+		}
+	}
+}
